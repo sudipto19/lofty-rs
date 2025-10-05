@@ -50,11 +50,24 @@ RUST_LOG=trace cargo test
 
 ## Benchmarking
 
-There are benchmarks available [here](./benches). To run them, do:
+There are benchmarks available [here](./benches) with both Linux-specific and cross-platform options:
 
+### Linux (iai-callgrind - high precision)
+```shell
+cargo bench --bench read_file --bench create_tag
+```
+
+### Cross-platform (Criterion - Windows/macOS/Linux)
+```shell
+cargo bench --bench read_file_criterion --bench create_tag_criterion
+```
+
+### All benchmarks
 ```shell
 cargo bench
 ```
+
+**Note**: The iai-callgrind benchmarks require Linux and Valgrind. The Criterion benchmarks work on all platforms and provide statistical analysis with HTML reports in `target/criterion/`.
 
 ## License
 

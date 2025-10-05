@@ -1,7 +1,25 @@
 #![allow(missing_docs)]
-//! Cross-platform tag creation benchmarks using Criterion
-//! These complement the existing iai-callgrind benchmarks for Linux
-//! and provide Windows/macOS developers the ability to run benchmarks locally
+//! Cross-platform Tag Creation Benchmarks (Criterion)
+//! 
+//! These benchmarks complement the existing iai-callgrind benchmarks (`create_tag.rs`)
+//! and enable Windows/macOS developers to run performance tests locally.
+//!
+//! ## Usage:
+//! ```bash
+//! # Run only cross-platform benchmarks
+//! cargo bench --bench create_tag_criterion
+//! 
+//! # Run all benchmarks (this file + iai-callgrind on Linux)
+//! cargo bench
+//! ```
+//!
+//! ## Output:
+//! - Terminal: Statistical analysis with timing and confidence intervals
+//! - HTML Reports: `target/criterion/` (detailed plots and analysis)
+//!
+//! ## Coverage:
+//! Tests tag creation performance for all 7 supported tag formats:
+//! AIFF Text Chunks, APE, ID3v1, ID3v2, MP4 Ilst, RIFF Info, Vorbis Comments
 
 use lofty::ape::ApeTag;
 use lofty::config::WriteOptions;

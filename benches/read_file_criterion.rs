@@ -1,7 +1,25 @@
 #![allow(missing_docs)]
-//! Cross-platform benchmarks using Criterion
-//! These complement the existing iai-callgrind benchmarks for Linux
-//! and provide Windows/macOS developers the ability to run benchmarks locally
+//! Cross-platform File Reading Benchmarks (Criterion)
+//! 
+//! These benchmarks complement the existing iai-callgrind benchmarks (`read_file.rs`)
+//! and enable Windows/macOS developers to run performance tests locally.
+//!
+//! ## Usage:
+//! ```bash
+//! # Run only cross-platform benchmarks
+//! cargo bench --bench read_file_criterion
+//! 
+//! # Run all benchmarks (this file + iai-callgrind on Linux)
+//! cargo bench
+//! ```
+//!
+//! ## Output:
+//! - Terminal: Statistical analysis with timing and confidence intervals
+//! - HTML Reports: `target/criterion/` (detailed plots and analysis)
+//!
+//! ## Coverage:
+//! Tests file reading performance for all 12 supported audio formats:
+//! AAC, AIFF, APE, FLAC, MP4, MP3, MPC, OPUS, RIFF, SPEEX, VORBIS, WAVPACK
 
 use lofty::config::ParseOptions;
 use lofty::probe::Probe;

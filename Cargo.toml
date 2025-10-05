@@ -9,6 +9,14 @@ members = [
 	"examples/custom_resolver",
 ]
 
+# Exclude fuzz from default builds - it requires special cargo-fuzz tooling
+default-members = [
+	"lofty",
+	"lofty_attr", 
+	"ogg_pager",
+	"examples/custom_resolver",
+]
+
 [workspace.package]
 edition = "2024"
 rust-version = "1.85"
